@@ -1,0 +1,62 @@
+.site-header {
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-sizing: border-box;
+  background: #101010;
+  color: white;
+}
+
+.site-logo {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+}
+
+.site-logo span {
+  color: #00ff41; /* Matrix Green */
+}
+
+.site-nav {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.site-nav a,
+.language-switch a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.language-switch a:hover {
+  color: #38bdf8;
+}
+
+.language-switch {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+}

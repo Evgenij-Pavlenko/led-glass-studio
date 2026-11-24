@@ -1,0 +1,27 @@
+---
+import '../styles/Header.css';
+const menu = [
+  { label: 'Startseite', href: '/' },
+  { label: 'Projekte', href: '/projekte' },
+  { label: 'Über mich', href: '/ueber-mich' },
+  { label: 'Kontakt', href: '/kontakt' },
+];
+---
+
+<header class="site-header">
+  <a href="/" class="site-logo">
+    LED-GLASS <span>STUDIO</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    {menu.map((item) => (
+      <a href={item.href}>{item.label}</a>
+    ))}
+  </nav>
+
+  <div class="languages-switch">
+    <span class="active">DE</span>
+    <span class="separator">|</span>
+    <span>UA</span>
+  </div>
+</header>
