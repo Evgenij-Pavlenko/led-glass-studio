@@ -31,15 +31,23 @@
 }
 
 .site-logo {
-  font-size: 20px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
-  color: white;
-  white-space: nowrap;
 }
 
-.site-logo span {
-  color: #00ff41; /* Matrix Green */
+.logo-image {
+  display: block;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  filter: brightness(0.75);
+  transition: filter 0.3s ease;
+}
+
+.logo-image:hover {
+  filter: brightness(1);
 }
 
 .site-nav {
@@ -136,8 +144,9 @@
   }
 
   /* Темний фон меню на телефоні */
-  .site-header.scrolled {
-    background: #101010;
+  .site-header.scrolled .logo-image {
+    background: transparent;
     box-shadow: none;
+    filter: brightness(1);
   }
 }
