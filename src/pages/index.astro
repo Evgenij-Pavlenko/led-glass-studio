@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import ProjectShowcase from '../components/ProjectShowcase.astro';
 
 const title = 'LED-GLASS Studio';
 ---
@@ -19,8 +20,24 @@ const title = 'LED-GLASS Studio';
     <Hero />
 
     <main>
-      <h1>LED-GLASS Studio</h1>
-      <p>Die Welt ein kleines bisschen heller machen.</p>
+      <section class="intro">
+        <h1>LED-GLASS Studio</h1>
+
+        <p class="slogan">Die Welt ein kleines bisschen heller machen.</p>
+
+        <h2>Deine Idee. In Glas graviert. Mit Licht zum Leben erweckt.</h2>
+
+        <p class="description">
+          Individuelle Lichtkunst durch präzise Gravur auf Glas und Acrylglas. Jedes Werk verbindet
+          persönliche Geschichten, einzigartige Motive und energiesparende LED-Beleuchtung.
+        </p>
+
+        <p class="description">
+          Ob persönliche Geschenke, Erinnerungsstücke oder dekorative Kunstwerke - jede Idee wird zu
+          einem besonderen Unikat.
+        </p>
+      </section>
+      <ProjectShowcase />
     </main>
   </body>
 </html>

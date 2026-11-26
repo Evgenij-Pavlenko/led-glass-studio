@@ -1,0 +1,72 @@
+---
+import '../styles/ProjectShowcase.css';
+
+const projects = [
+  {
+    title: 'FAYNA Berlin',
+    image: '/images/projects/fayna-berlin/cover.jpg',
+    size: '30 × 40 cm',
+    href: '/projekte#fayna-berlin',
+    aiEdited: true,
+  },
+  {
+    title: 'Potsdam / Deutschland',
+    image: '/images/projects/potsdam-germany/cover.jpg',
+    size: '30 × 40 cm',
+    href: '/projekte#potsdam-germany',
+    aiEdited: true,
+  },
+  {
+    title: 'Matrix',
+    image: '/images/projects/matrix/cover.jpg',
+    size: '34 × 92 cm',
+    href: '/projekte#matrix',
+    aiEdited: true,
+  },
+  {
+    title: 'Synagoge Berlin',
+    image: '/images/projects/synagoge-berlin/cover.jpg',
+    size: '30 × 40 cm',
+    href: '/projekte#synagoge-berlin',
+    aiEdited: true,
+  },
+  {
+    title: 'Feuer & Freiheit',
+    image: '/images/projects/boombox/cover.jpg',
+    size: '20 × 30 cm',
+    href: '/projekte#boombox',
+    aiEdited: true,
+  },
+];
+---
+
+<section class="featured-projects" aria-labelledby="featured-title">
+  <h2 id="featured-title">Ausgewählte Arbeiten</h2>
+
+  <div class="featured-grid">
+    {projects.map((project) => (
+      <a class="project-card" href={project.href}>
+        <div class="project-image">
+          <img
+            src={project.image}
+            alt={`LED-Glasgravur: ${project.title}`}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="project-info">
+          <h3>{project.title}</h3>
+          {project.size && <p class="project-size">{project.size}</p>}
+          {project.aiEdited && <p class="project-note">Foto mit KI nachbearbeitet</p>}
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script>
+  import { initRevealGlow } from '../scripts/revealGlow';
+
+  initRevealGlow('.project-card');
+</script>

@@ -1,0 +1,171 @@
+/* =========================================
+   LED-GLASS — Project Showcase
+   ========================================= */
+
+.featured-projects {
+  padding: 48px 20px 80px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.featured-projects h2 {
+  text-align: center;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  margin: 0 0 36px;
+  color: #f5f5f5;
+}
+
+/* Сітка проєктів */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Картка */
+
+.project-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: visible;
+
+  background: #151515;
+  border: 1px solid #333;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Світіння навколо картки */
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 24px;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    240px circle at var(--mouse-x) var(--mouse-y),
+    rgba(100, 255, 150, 0.42),
+    rgba(50, 200, 100, 0.18) 50%,
+    transparent 80%
+  );
+
+  filter: blur(20px);
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  border-color: #42d977;
+  transform: translateY(-3px);
+}
+
+/* Фотографія */
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background: #080808;
+  border-radius: 11px 11px 0 0;
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Інформація про проєкт */
+
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.project-info h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.project-size {
+  font-size: 12px;
+  color: #ccc;
+  margin: 0;
+}
+
+.project-ai {
+  font-size: 10px;
+  color: #999;
+  margin: 0;
+}
+
+/* Адаптивність */
+
+@media (max-width: 1100px) {
+  .featured-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .featured-projects {
+    padding: 32px 16px 60px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .project-info h3 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card::before {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
